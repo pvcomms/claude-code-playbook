@@ -1,0 +1,43 @@
+{
+  "name": "@paramxclaudedev/setup",
+  "version": "0.1.0",
+  "description": "Bootstrap the full claude-code-playbook stack on a fresh machine — MCPs, skills, hooks, env",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-playbook-setup": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude-code",
+    "mcp",
+    "setup",
+    "cli",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paramxclaudedev/claude-code-playbook",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@paramxclaudedev/mcp-whoop",
+  "version": "1.0.0",
+  "description": "MCP server for the WHOOP Developer API (v2). Read recovery, sleep, strain, workouts, and body measurements as typed tools.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "whoop-mcp-server": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "auth": "tsx scripts/auth.ts",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "whoop",
+    "biometrics",
+    "health",
+    "wearables",
+    "recovery",
+    "sleep",
+    "fitness"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paramxclaudedev/claude-code-playbook",
+    "directory": "packages/mcp-whoop"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "@paramxclaudedev/mcp-spaceship",
+  "version": "0.1.0",
+  "description": "MCP server for the Spaceship domain registrar API. Domain availability, registration, DNS records, nameservers, transfers.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "spaceship-mcp-server": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "smoke": "tsx scripts/smoke-test.ts",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "spaceship",
+    "domains",
+    "dns",
+    "registrar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paramxclaudedev/claude-code-playbook",
+    "directory": "packages/mcp-spaceship"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

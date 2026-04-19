@@ -1,0 +1,89 @@
+{
+  "updated": "2026-04-19",
+  "evals": {
+    "mcp_tool_selection_v2": {
+      "description": "First-try tool correctness, 44 tools / 6 servers / 50 queries",
+      "metric": "accuracy_pct",
+      "results": [
+        {
+          "model": "claude-opus-4-7",
+          "score": 97.7,
+          "tier": "large",
+          "cost_usd": 0.38
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "score": 97.7,
+          "tier": "large",
+          "cost_usd": 0.09
+        },
+        {
+          "model": "gpt-4o-mini",
+          "score": 90.9,
+          "tier": "small",
+          "cost_usd": 0.008
+        },
+        {
+          "model": "claude-haiku-4-5",
+          "score": 84.0,
+          "tier": "small",
+          "cost_usd": 0.02
+        },
+        { "model": "gpt-4o", "score": 76.0, "tier": "large", "cost_usd": 0.22 },
+        {
+          "model": "gemini-2.5-pro",
+          "score": 70.0,
+          "tier": "large",
+          "cost_usd": 0.18
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "score": 46.0,
+          "tier": "small",
+          "cost_usd": 0.03
+        }
+      ]
+    },
+    "hook_eval_14d": {
+      "description": "Wall-clock time saved per hook, 14-day window",
+      "metric": "net_seconds_per_week",
+      "results": [
+        {
+          "hook": "prettier auto-format",
+          "class": "formatter",
+          "fires_per_week": 40,
+          "latency_ms": 180,
+          "net_saved_s_week": 600,
+          "verdict": "keep"
+        },
+        {
+          "hook": "stop chime",
+          "class": "notify",
+          "fires_per_week": 30,
+          "latency_ms": 12,
+          "net_saved_s_week": 144,
+          "verdict": "keep"
+        },
+        {
+          "hook": "destructive guard",
+          "class": "guard",
+          "fires_per_week": 20,
+          "latency_ms": 8,
+          "net_saved_s_week": 48,
+          "verdict": "keep"
+        }
+      ]
+    },
+    "voice_preservation": {
+      "description": "Voice drift after N rewrites, Opus judge",
+      "metric": "iterations_before_50pct_drift",
+      "results": [
+        { "model": "claude-opus-4-7", "iterations": 8 },
+        { "model": "claude-sonnet-4-6", "iterations": 5 },
+        { "model": "claude-haiku-4-5", "iterations": 3 },
+        { "model": "gpt-5", "iterations": 4 },
+        { "model": "gemini-2.5-pro", "iterations": 3 }
+      ]
+    }
+  }
+}
