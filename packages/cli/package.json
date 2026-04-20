@@ -5,7 +5,8 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "claude-playbook-setup": "dist/index.js"
+    "claude-playbook-setup": "dist/index.js",
+    "playbook-tail": "dist/tail.js"
   },
   "scripts": {
     "build": "tsc",

@@ -3,6 +3,8 @@ import { SkillsSection } from "./components/SkillsSection";
 import { HooksSection } from "./components/HooksSection";
 import { EvalsSection } from "./components/EvalsSection";
 import { InstallSection } from "./components/InstallSection";
+import { ComposerExplorer } from "./components/ComposerExplorer";
+import { LiveFiringsFeed } from "./components/LiveFiringsFeed";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 
@@ -145,6 +147,10 @@ export default function Home() {
       <HooksSection />
       <hr className="divider" />
       <EvalsSection />
+      <hr className="divider" />
+      <ComposerExplorer />
+      <hr className="divider" />
+      <LiveFiringsFeed />
       <hr className="divider" />
       <InstallSection />
 

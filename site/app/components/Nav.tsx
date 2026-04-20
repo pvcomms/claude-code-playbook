@@ -36,6 +36,8 @@ export function Nav() {
             { label: "Skills", href: "#skills" },
             { label: "Hooks", href: "#hooks" },
             { label: "Evals", href: "#evals" },
+            { label: "Compose", href: "#composer" },
+            { label: "Live", href: "#firings" },
           ].map((link) => (
             <a
               key={link.href}
