@@ -18,6 +18,36 @@ Full save/deploy/log pass at end of a Claude Code session. Runs non-interactivel
 
 Run these in parallel where safe. Do not stop on individual failures — surface the error and continue to the next step.
 
+### 0. Cross-session sweep (ALWAYS run first)
+
+Before committing anything, scan for work done in OTHER recent sessions that hasn't been saved/pushed yet. This ensures the sum of all sessions gets persisted — not just the current one.
+
+```bash
+# Find all git repos under ~/Code with uncommitted or unpushed work
+for dir in /Users/p/Code/*/; do
+  if [ -d "$dir/.git" ]; then
+    st=$(cd "$dir" && git status --short 2>/dev/null)
+    ahead=$(cd "$dir" && git log --oneline @{u}.. 2>/dev/null | wc -l | tr -d ' ')
+    [ -n "$st" ] || [ "$ahead" -gt 0 ] && echo "$dir — uncommitted=$([[ -n $st ]] && echo YES || echo no) ahead=$ahead"
+  fi
+done
+
+# Read 5 most recent session transcripts for unfinished work
+ls -t ~/.claude/projects/-Users-p-Library-Mobile-Documents-com-apple-CloudDocs/*.jsonl | head -5
+```
+
+For each repo with loose work:
+
+- Read the last session transcript that touched it (by context)
+- Commit + push uncommitted changes (don't lose in-flight work)
+- Note anything that was mid-build and needs finishing
+
+For the memory repo (`~/.claude/memory`):
+
+```bash
+cd ~/.claude/memory && git add -A && git commit -m "chore: session-save sync" && git push
+```
+
 ### 1. Git commit + push (for each touched git repo)
 
 For every directory the session modified that is also a git repo:
