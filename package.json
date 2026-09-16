@@ -1,0 +1,22 @@
+{
+  "name": "@pvcomms/claude-code-playbook",
+  "version": "0.1.0",
+  "description": "10 skills, 15 hooks, 5 eval harnesses, 1 CLI — the Claude Code layer I actually run",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean",
+    "lint": "pnpm -r lint"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "prettier": "^3.4.2"
+  }
+}

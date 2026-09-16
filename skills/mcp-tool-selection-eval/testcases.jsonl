@@ -1,0 +1,31 @@
+{"id": "direct-01", "category": "direct", "utterance": "Run notion-search for 'oracle problem'", "expected_tool": "notion-search"}
+{"id": "direct-02", "category": "direct", "utterance": "Use whoop-list-recoveries to pull the last 7 days", "expected_tool": "whoop-list-recoveries"}
+{"id": "direct-03", "category": "direct", "utterance": "Call todoist-filter-tasks with query 'today | overdue'", "expected_tool": "todoist-filter-tasks"}
+{"id": "direct-04", "category": "direct", "utterance": "Use gmail-create-draft to draft a reply", "expected_tool": "gmail-create-draft"}
+{"id": "direct-05", "category": "direct", "utterance": "calendar-suggest-time for a 30-min with Priya", "expected_tool": "calendar-suggest-time"}
+{"id": "direct-06", "category": "direct", "utterance": "figma-get-screenshot of the hero frame", "expected_tool": "figma-get-screenshot"}
+{"id": "direct-07", "category": "direct", "utterance": "bluesky-create-post saying Keep is shipping", "expected_tool": "bluesky-create-post"}
+{"id": "semantic-01", "category": "semantic", "utterance": "Log a new page in Notion with today's reflection", "expected_tool": "notion-create-pages"}
+{"id": "semantic-02", "category": "semantic", "utterance": "What was my recovery score yesterday?", "expected_tool": "whoop-list-recoveries"}
+{"id": "semantic-03", "category": "semantic", "utterance": "Add a task: call the dentist, due Friday", "expected_tool": "todoist-create-task"}
+{"id": "semantic-04", "category": "semantic", "utterance": "Block 2-3pm tomorrow for deep work", "expected_tool": "calendar-create-event"}
+{"id": "semantic-05", "category": "semantic", "utterance": "Find all emails from Sequoia last month", "expected_tool": "gmail-search-threads"}
+{"id": "semantic-06", "category": "semantic", "utterance": "Mark that dentist task done", "expected_tool": "todoist-close-task"}
+{"id": "semantic-07", "category": "semantic", "utterance": "Post an update to the #launches channel", "expected_tool": "slack-send-message"}
+{"id": "semantic-08", "category": "semantic", "utterance": "How much did I sleep last night?", "expected_tool": "whoop-list-sleep"}
+{"id": "semantic-09", "category": "semantic", "utterance": "File a Linear bug for the auth redirect loop", "expected_tool": "linear-create-issue"}
+{"id": "semantic-10", "category": "semantic", "utterance": "Pull the design tokens from my Figma library", "expected_tool": "figma-get-variable-defs"}
+{"id": "semantic-11", "category": "semantic", "utterance": "Open this Notion page and show me its content: notion.so/abc123", "expected_tool": "notion-fetch"}
+{"id": "semantic-12", "category": "semantic", "utterance": "Find that essay draft I wrote about commitment markets somewhere in my workspace", "expected_tool": "notion-search"}
+{"id": "ambiguous-01", "category": "ambiguous", "utterance": "Show me my tasks for today", "expected_tool": "todoist-filter-tasks", "notes": "Smart query 'today' should use filter-tasks, not list-tasks. list-tasks is id/project/label only."}
+{"id": "ambiguous-02", "category": "ambiguous", "utterance": "Get my Notion page about Keep", "expected_tool": "notion-search", "notes": "No ID given — must search first, not fetch. fetch would be wrong unless an ID/URL is supplied."}
+{"id": "ambiguous-03", "category": "ambiguous", "utterance": "Scrape the text from this landing page: keep.markets", "expected_tool": "chrome-get-page-text", "notes": "Web content — chrome MCP, not computer-use."}
+{"id": "ambiguous-04", "category": "ambiguous", "utterance": "Delete the old 'test task' from my inbox project", "expected_tool": "todoist-delete-task", "notes": "Explicit delete, not close. 'Delete' vs 'complete' must be respected."}
+{"id": "ambiguous-05", "category": "ambiguous", "utterance": "Remind me to take out the trash tonight", "expected_tool": "todoist-create-task", "notes": "Reminder = new task, not calendar event (no fixed meeting time implied)."}
+{"id": "ambiguous-06", "category": "ambiguous", "utterance": "What's my HRV been this week?", "expected_tool": "whoop-list-recoveries", "notes": "HRV lives on recovery objects, not cycles or sleep."}
+{"id": "ambiguous-07", "category": "ambiguous", "utterance": "Duplicate my weekly review template", "expected_tool": "notion-duplicate-page", "notes": "Template → duplicate-page, not create-pages from scratch."}
+{"id": "negative-01", "category": "negative", "utterance": "What's the weather in Bangalore right now?", "expected_behavior": "no_tool", "notes": "No weather tool in the menu — model should refuse or say none applies."}
+{"id": "negative-02", "category": "negative", "utterance": "Translate this sentence to French: 'the oracle is the product'", "expected_behavior": "no_tool", "notes": "Pure LLM task, no translation tool exists."}
+{"id": "negative-03", "category": "negative", "utterance": "Send $500 to my brother via UPI", "expected_behavior": "no_tool", "notes": "No payments tool — must refuse."}
+{"id": "negative-04", "category": "negative", "utterance": "Book me a flight to SFO next Tuesday", "expected_behavior": "no_tool", "notes": "No travel tool; calendar-create-event is NOT the right fit."}
+{"id": "negative-05", "category": "negative", "utterance": "What's 47 * 89?", "expected_behavior": "no_tool", "notes": "Arithmetic — no tool needed."}

@@ -1,0 +1,42 @@
+{
+  "name": "@paramxclaudedev/setup",
+  "version": "0.1.0",
+  "description": "Bootstrap the claude-code-playbook stack on a fresh machine — skills, hooks, MCP registration hints. NOT PUBLISHED to npm: run it from a clone.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-playbook-setup": "dist/index.js",
+    "playbook-tail": "dist/tail.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude-code",
+    "mcp",
+    "setup",
+    "cli",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pvcomms/claude-code-playbook",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

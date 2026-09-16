@@ -1,0 +1,310 @@
+[
+  {
+    "name": "notion-search",
+    "description": "Search across Notion workspace for pages and database rows matching a query. Returns a list of page references. Use when the user wants to find something they already wrote, not fetch a specific known page."
+  },
+  {
+    "name": "notion-fetch",
+    "description": "Fetch the full content of a specific Notion page or database by its ID or URL. Returns page body, blocks, and properties. Use when the user references a specific Notion page they want to read."
+  },
+  {
+    "name": "notion-create-pages",
+    "description": "Create one or more new pages in Notion under a given parent page or database. Use when the user wants to log, record, or save something new into Notion."
+  },
+  {
+    "name": "notion-update-page",
+    "description": "Update properties or content of an existing Notion page. Use to edit a page the user already has, not to create a new one."
+  },
+  {
+    "name": "notion-duplicate-page",
+    "description": "Duplicate an existing Notion page into the same or a different parent. Use when the user asks to copy a page or use one as a template."
+  },
+  {
+    "name": "notion-move-pages",
+    "description": "Move Notion pages from one parent to another. Use when the user wants to reorganize their workspace."
+  },
+  {
+    "name": "notion-create-database",
+    "description": "Create a new Notion database with specified schema. Use when the user wants to set up a new structured table, not to add a row to an existing one."
+  },
+  {
+    "name": "notion-update-data-source",
+    "description": "Update a Notion database's schema (add/remove/rename properties). Use to change the structure of an existing database."
+  },
+  {
+    "name": "notion-create-view",
+    "description": "Create a new view (table, board, calendar, gallery, timeline) of a Notion database. Use when the user wants a new lens on existing data."
+  },
+  {
+    "name": "notion-update-view",
+    "description": "Update an existing Notion database view's filter, sort, or layout."
+  },
+  {
+    "name": "notion-create-comment",
+    "description": "Add a comment to a Notion page or discussion. Use when the user wants to leave a note on a page, not edit its content."
+  },
+  {
+    "name": "notion-get-comments",
+    "description": "Fetch comments attached to a specific Notion page."
+  },
+  {
+    "name": "notion-get-users",
+    "description": "List Notion workspace members. Use when the user needs to reference or mention someone by their Notion user ID."
+  },
+  {
+    "name": "notion-get-teams",
+    "description": "List teams inside the Notion workspace."
+  },
+  {
+    "name": "gmail-search-threads",
+    "description": "Search Gmail for threads matching a Gmail query (from:, subject:, label:, etc.). Returns a list of thread IDs and snippets."
+  },
+  {
+    "name": "gmail-get-thread",
+    "description": "Fetch the full content of a specific Gmail thread by ID, including all messages and headers."
+  },
+  {
+    "name": "gmail-create-draft",
+    "description": "Create a Gmail draft email. Does not send. Use when the user wants to compose something they can review before sending."
+  },
+  {
+    "name": "gmail-list-drafts",
+    "description": "List existing Gmail drafts in the user's mailbox."
+  },
+  {
+    "name": "gmail-list-labels",
+    "description": "List all Gmail labels available in the mailbox."
+  },
+  {
+    "name": "gmail-create-label",
+    "description": "Create a new Gmail label for organizing mail."
+  },
+  {
+    "name": "calendar-list-events",
+    "description": "List events on the user's calendar for a given time range. Use when the user asks what's on their schedule."
+  },
+  {
+    "name": "calendar-get-event",
+    "description": "Fetch a specific calendar event by ID. Use when the user references a known event they want details on."
+  },
+  {
+    "name": "calendar-create-event",
+    "description": "Create a new calendar event. Use when the user wants to block time or schedule something."
+  },
+  {
+    "name": "calendar-update-event",
+    "description": "Update an existing calendar event's time, attendees, or description."
+  },
+  {
+    "name": "calendar-delete-event",
+    "description": "Delete a calendar event by ID."
+  },
+  {
+    "name": "calendar-respond-to-event",
+    "description": "RSVP yes/no/maybe to a calendar invitation."
+  },
+  {
+    "name": "calendar-suggest-time",
+    "description": "Propose meeting times that work across multiple attendees' calendars. Use for scheduling coordination."
+  },
+  {
+    "name": "calendar-list-calendars",
+    "description": "List all calendars the user has access to (primary, shared, subscribed)."
+  },
+  {
+    "name": "todoist-list-tasks",
+    "description": "List Todoist tasks filtered by project, section, label, or IDs. Does not run complex query filters — use todoist-filter-tasks for that."
+  },
+  {
+    "name": "todoist-filter-tasks",
+    "description": "Run a Todoist filter query like 'today | overdue' or '#Work & p1'. Use when the user asks for tasks matching a smart condition, not a simple list."
+  },
+  {
+    "name": "todoist-get-task",
+    "description": "Fetch a single Todoist task by ID."
+  },
+  {
+    "name": "todoist-create-task",
+    "description": "Create a new Todoist task with content, due date, priority, project, and labels."
+  },
+  {
+    "name": "todoist-update-task",
+    "description": "Update fields on an existing Todoist task."
+  },
+  {
+    "name": "todoist-close-task",
+    "description": "Mark a Todoist task as completed."
+  },
+  {
+    "name": "todoist-reopen-task",
+    "description": "Reopen a previously completed Todoist task."
+  },
+  {
+    "name": "todoist-delete-task",
+    "description": "Permanently delete a Todoist task. Use only when the user explicitly asks to delete, not complete."
+  },
+  {
+    "name": "todoist-list-projects",
+    "description": "List all Todoist projects."
+  },
+  {
+    "name": "todoist-create-project",
+    "description": "Create a new Todoist project."
+  },
+  {
+    "name": "todoist-list-comments",
+    "description": "List comments on a Todoist task or project."
+  },
+  {
+    "name": "todoist-create-comment",
+    "description": "Add a comment to a Todoist task or project."
+  },
+  {
+    "name": "slack-send-message",
+    "description": "Post a message to a Slack channel or DM. Use when the user wants to send something in Slack."
+  },
+  {
+    "name": "slack-search-messages",
+    "description": "Search Slack message history for text or from a specific user."
+  },
+  {
+    "name": "slack-list-channels",
+    "description": "List Slack channels the user can access."
+  },
+  {
+    "name": "slack-read-channel",
+    "description": "Read recent messages from a specific Slack channel."
+  },
+  {
+    "name": "linear-create-issue",
+    "description": "Create a Linear issue in a given team with title, description, priority, and labels."
+  },
+  {
+    "name": "linear-update-issue",
+    "description": "Update an existing Linear issue (status, assignee, priority)."
+  },
+  {
+    "name": "linear-search-issues",
+    "description": "Search Linear issues by title, description, assignee, or state."
+  },
+  {
+    "name": "linear-get-issue",
+    "description": "Fetch a specific Linear issue by ID."
+  },
+  {
+    "name": "figma-get-design-context",
+    "description": "Extract design context from a Figma file or frame — variables, components, layers, tokens. Use when the user wants to translate a Figma design into code."
+  },
+  {
+    "name": "figma-get-screenshot",
+    "description": "Capture a PNG screenshot of a specific Figma frame or node."
+  },
+  {
+    "name": "figma-search-design-system",
+    "description": "Search a Figma design-system library for components by name."
+  },
+  {
+    "name": "figma-get-variable-defs",
+    "description": "Fetch variable definitions (colors, spacing, typography tokens) from a Figma file."
+  },
+  {
+    "name": "figma-create-design-system-rules",
+    "description": "Generate design-system rules (CSS vars, config) from a Figma file."
+  },
+  {
+    "name": "whoop-get-profile",
+    "description": "Fetch the user's Whoop profile (name, email, account id)."
+  },
+  {
+    "name": "whoop-get-body-measurement",
+    "description": "Fetch Whoop body measurements (height, weight, max heart rate)."
+  },
+  {
+    "name": "whoop-list-cycles",
+    "description": "List Whoop cycles (days) in a date range. Each cycle has strain, avg HR, kilojoules."
+  },
+  {
+    "name": "whoop-get-cycle",
+    "description": "Fetch a specific Whoop cycle by ID."
+  },
+  {
+    "name": "whoop-list-recoveries",
+    "description": "List Whoop daily recovery scores (0-100%) with HRV and resting HR."
+  },
+  {
+    "name": "whoop-get-cycle-recovery",
+    "description": "Fetch the recovery score for a specific Whoop cycle."
+  },
+  {
+    "name": "whoop-list-sleep",
+    "description": "List Whoop sleep sessions in a date range with stages, performance, and disturbances."
+  },
+  {
+    "name": "whoop-get-sleep",
+    "description": "Fetch a specific Whoop sleep session by ID."
+  },
+  {
+    "name": "whoop-get-cycle-sleep",
+    "description": "Fetch the sleep session associated with a specific Whoop cycle."
+  },
+  {
+    "name": "whoop-list-workouts",
+    "description": "List Whoop workouts in a date range with strain, HR zones, and sport type."
+  },
+  {
+    "name": "whoop-get-workout",
+    "description": "Fetch a specific Whoop workout by ID."
+  },
+  {
+    "name": "bluesky-create-post",
+    "description": "Publish a post to Bluesky on the user's behalf."
+  },
+  {
+    "name": "bluesky-search-posts",
+    "description": "Search Bluesky for posts matching a query or hashtag."
+  },
+  {
+    "name": "bluesky-get-profile",
+    "description": "Fetch a Bluesky user profile by handle."
+  },
+  {
+    "name": "chrome-navigate",
+    "description": "Navigate the user's Chrome browser to a given URL. Use for web app automation tasks where a dedicated MCP does not exist."
+  },
+  {
+    "name": "chrome-get-page-text",
+    "description": "Extract the current Chrome page's visible text content."
+  },
+  {
+    "name": "chrome-form-input",
+    "description": "Fill an input field on the current Chrome page."
+  },
+  {
+    "name": "chrome-javascript-eval",
+    "description": "Evaluate arbitrary JavaScript in the current Chrome tab."
+  },
+  {
+    "name": "computer-screenshot",
+    "description": "Capture a screenshot of the user's desktop. Use only when no dedicated or browser MCP fits, e.g. native desktop apps."
+  },
+  {
+    "name": "computer-left-click",
+    "description": "Click a pixel coordinate on the user's desktop. Use only for native-app control when other tools are unavailable."
+  },
+  {
+    "name": "computer-type",
+    "description": "Type text into the currently focused native app. Blocked on terminals and IDEs."
+  },
+  {
+    "name": "drive-search-files",
+    "description": "Search Google Drive for files by name or content."
+  },
+  {
+    "name": "drive-read-file-content",
+    "description": "Read the content of a Google Drive file (Docs, Sheets, PDFs)."
+  },
+  {
+    "name": "drive-create-file",
+    "description": "Create a new file in Google Drive."
+  }
+]
